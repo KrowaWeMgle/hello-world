@@ -2,7 +2,7 @@
 
 //Explaining basic promise syntax: A real example
 
-let promise = fetch('img/cooffie.jpg');
+let promise = fetch('cooffie.jpg');
 let promise2 = promise.then(response => {
     if(!response.ok){throw new Error(`HTTP error! status: ${response.status}`);}
     else {return response.blob();}
