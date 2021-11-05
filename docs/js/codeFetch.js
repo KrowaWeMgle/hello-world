@@ -3,7 +3,7 @@
 let imgSrc;
 
 
-fetch('img/coffie.jpg').
+fetch('img/cooffie.jpg').
 then(function(response){console.log('Start');
 
 return response.blob();})
