@@ -2,7 +2,7 @@
 
 //Explaining basic promise syntax: A real example
 
-let promise = fetch('cooffie.jpg');
+let promise = fetch('img/coffie.jpg');
 let promise2 = promise.then(response => {
     if(!response.ok){throw new Error(`HTTP error! status: ${response.status}`);}
     else {return response.blob();}
@@ -41,7 +41,7 @@ function fetchAndDecode(url, type) {
     });
   }
 
-let coffee = fetchAndDecode('img/coffe.jpg', 'blob');
+let coffee = fetchAndDecode('img/coffie.jpg', 'blob');
 let tea = fetchAndDecode('img/tea.jpg', 'blob');
 let description = fetchAndDecode('img/description.txt', 'text');
 
