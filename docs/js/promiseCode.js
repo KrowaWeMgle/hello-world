@@ -38,7 +38,10 @@ function fetchAndDecode(url, type) {
   })
   .catch(e => {
     console.log(`There has been a problem with your fetch operation for resource "${url}": ` + e.message);
-  });
+  })
+  .finally(()=>{
+    console.log(`fetch attempt for "${url}"" finished`);
+  })
 }
 
 let coffee = fetchAndDecode('coffie.jpg', 'blob');
