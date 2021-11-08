@@ -46,7 +46,7 @@ let tea = fetchAndDecode('img/tea.jpg', 'blob');
 let description = fetchAndDecode('img/description.txt', 'text');
 
 Promise.all([coffee,tea,description]).then(val => {
-  console.log(values);
+  console.log(val);
   // Store each value returned from the promises in separate variables; create object URLs from the blobs
   let objectURL1 = URL.createObjectURL(val[0]);
   let objectURL2 = URL.createObjectURL(val[1]);
