@@ -45,4 +45,6 @@ let coffee = fetchAndDecode('coffee.jpg', 'blob');
 let tea = fetchAndDecode('tea.jpg', 'blob');
 let description = fetchAndDecode('description.txt', 'text');
 
-Promise.all
+Promise.all([coffee,tea,description]).then(val => {
+    
+});
