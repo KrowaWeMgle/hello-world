@@ -25,25 +25,25 @@ let c = fetch('img/coffie');
 //Promise.all([a,b,c]).then(value => {});
 
 function fetchAndDecode(url, type) {
-    return fetch(url).then(response => {
-      if(!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      } else {
-        if(type === 'blob') {
-          return response.blob();
-        } else if(type === 'text') {
-          return response.text();
-        }
+  return fetch(url).then(response => {
+    if(!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      if(type === 'blob') {
+        return response.blob();
+      } else if(type === 'text') {
+        return response.text();
       }
-    })
-    .catch(e => {
-      console.log(`There has been a problem with your fetch operation for resource "${url}": ` + e.message);
-    });
-  }
+    }
+  })
+  .catch(e => {
+    console.log(`There has been a problem with your fetch operation for resource "${url}": ` + e.message);
+  });
+}
 
-let coffee = fetchAndDecode('docs/img/coffie.jpg', 'blob');
-let tea = fetchAndDecode('docs/img/tea.jpg', 'blob');
-let description = fetchAndDecode('docs/img/description.txt', 'text');
+let coffee = fetchAndDecode('coffie.jpg', 'blob');
+let tea = fetchAndDecode('tea.jpg', 'blob');
+let description = fetchAndDecode('description.txt', 'text');
 
 Promise.all([coffee,tea,description]).then(val => {
   console.log(val);
