@@ -18,10 +18,11 @@ let errorCase = promise3.catch(e => {
 });
 
 //re-write primise.all
+/*
 let a = fetch('img/coffie');
 let b = fetch('img/coffie');
 let c = fetch('img/coffie');
-
+*/
 //Promise.all([a,b,c]).then(value => {});
 
 function fetchAndDecode(url, type) {
@@ -44,9 +45,9 @@ function fetchAndDecode(url, type) {
   })
 }
 
-let coffee = fetchAndDecode('coffie.jpg', 'blob');
-let tea = fetchAndDecode('tea.jpg', 'blob');
-let description = fetchAndDecode('description.txt', 'text');
+let coffee = fetchAndDecode('docs/img/coffie.jpg', 'blob');
+let tea = fetchAndDecode('docs/img/tea.jpg', 'blob');
+let description = fetchAndDecode('docs/img/description.txt', 'text');
 
 Promise.all([coffee,tea,description]).then(val => {
   console.log(val);
