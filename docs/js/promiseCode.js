@@ -2,7 +2,7 @@
 
 //Explaining basic promise syntax: A real example
 
-let promise = fetch('img/coffie.jpg');
+let promise = fetch('docs/img/coffie.jpg');
 let promise2 = promise.then(response => {
     if(!response.ok){throw new Error(`HTTP error! status: ${response.status}`);}
     else {return response.blob();}
@@ -41,9 +41,9 @@ function fetchAndDecode(url, type) {
     });
   }
 
-let coffee = fetchAndDecode('img/coffie.jpg', 'blob');
-let tea = fetchAndDecode('img/tea.jpg', 'blob');
-let description = fetchAndDecode('img/description.txt', 'text');
+let coffee = fetchAndDecode('docs/img/coffie.jpg', 'blob');
+let tea = fetchAndDecode('docs/img/tea.jpg', 'blob');
+let description = fetchAndDecode('docs/img/description.txt', 'text');
 
 Promise.all([coffee,tea,description]).then(val => {
   console.log(val);
