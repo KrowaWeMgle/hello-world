@@ -41,10 +41,27 @@ function fetchAndDecode(url, type) {
     });
   }
 
-let coffee = fetchAndDecode('coffee.jpg', 'blob');
-let tea = fetchAndDecode('tea.jpg', 'blob');
-let description = fetchAndDecode('description.txt', 'text');
+let coffee = fetchAndDecode('img/coffe.jpg', 'blob');
+let tea = fetchAndDecode('img/tea.jpg', 'blob');
+let description = fetchAndDecode('img/description.txt', 'text');
 
 Promise.all([coffee,tea,description]).then(val => {
-    
+  console.log(values);
+  // Store each value returned from the promises in separate variables; create object URLs from the blobs
+  let objectURL1 = URL.createObjectURL(val[0]);
+  let objectURL2 = URL.createObjectURL(val[1]);
+  let descText = val[2];
+  
+  // Display the images in <img> elements
+  let image1 = document.createElement('img');
+  let image2 = document.createElement('img');
+  image1.src = objectURL1;
+  image2.src = objectURL2;
+  document.body.appendChild(image1);
+  document.body.appendChild(image2);
+  
+  // Display the text in a paragraph
+  let para = document.createElement('p');
+  para.textContent = descText;
+  document.body.appendChild(para);
 });
