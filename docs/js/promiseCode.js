@@ -71,12 +71,20 @@ Promise.all([coffee,tea,description]).then(val => {
 });
 
 */
+/*
 let pro1 = fetch("https://github.com/KrowaWeMgle/hello-world/blob/85d5ea54b45ff757947e36a7e1554fa95f88c0d6/docs/img/coffie.jpg")
 .then(res => {console.log(`Status: ${res.ok}`);})
 .catch(err => {console.log(`Status failed fetching`);})
 .finally(console.log(`fetching ended`));
-
-let pro2 = fetch("docs/img/coffie.jpg")
+*/
+let pro2 = fetch("docs/img/coffie.jpg", {
+  method: 'GET',
+  headers: {
+    'Constent-type': 'img'
+  },
+  mode: 'no-cors',
+  cache: 'default'
+})
 .then(res => {console.log(`Status: ${res.ok}`);})
 .catch(err => {console.log(`Status failed fetching`);})
 .finally(console.log(`fetching ended`));
