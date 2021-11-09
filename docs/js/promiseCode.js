@@ -82,7 +82,7 @@ let pro2 = fetch("docs/img/coffie.jpg", {
   headers: {
     'Constent-type': 'img'
   },
-  mode: 'no-cors',
+  mode: 'cors',
   cache: 'default'
 })
 .then(res => {console.log(`Status: ${res.ok}`);})
