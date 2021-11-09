@@ -1,7 +1,7 @@
 //promise https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
 
 //Explaining basic promise syntax: A real example
-
+/*
 let promise = fetch('docs/img/coffie.jpg');
 let promise2 = promise.then(response => {
     if(!response.ok){throw new Error(`HTTP error! status: ${response.status}`);}
@@ -24,7 +24,7 @@ let b = fetch('img/coffie');
 let c = fetch('img/coffie');
 */
 //Promise.all([a,b,c]).then(value => {});
-
+/*
 function fetchAndDecode(url, type) {
   return fetch(url).then(response => {
     if(!response.ok) {
@@ -69,3 +69,9 @@ Promise.all([coffee,tea,description]).then(val => {
   para.textContent = descText;
   document.body.appendChild(para);
 });
+
+*/
+let pro1 = fetch("img/coffie.jpg")
+.then(res => {console.log(`Status: ${res.ok}`);})
+.catch(err => {console.log(`Status failed fetching`);})
+.finally(console.log(`fetching ended`));
